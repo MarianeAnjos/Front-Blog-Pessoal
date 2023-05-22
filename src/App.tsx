@@ -9,8 +9,9 @@ function App(){
   return(
     <BrowserRouter>
       <Navbar/>
-        <div>
+        <div style={{minHeight: '100vh'}}>
       <Routes>
+          <Route path='/' element={<Login/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
       </Routes>
