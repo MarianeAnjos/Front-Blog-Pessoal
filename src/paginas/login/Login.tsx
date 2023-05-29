@@ -1,15 +1,15 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import {api} from '../../services/Service';
+import { api } from '../../services/Service';
 import { UserLogin } from '../../models/UserLogin';
 import './Login.css';
 
 function Login() {
   const history = useNavigate();
   // history('/posts')
-  const[token,setToken] = useLocalStorage('token');
+  const [token, setToken] = useLocalStorage('token');
 
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {
@@ -27,15 +27,23 @@ function Login() {
     })
   }
 
+  useEffect(
+    () => {
+      if (token != '') {
+        history('/home')
+      }
+    }, [token])
+
+
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    try{
-          const resposta = await api.post(`/usuarios/logar`, userLogin)
-          setToken(resposta.data.token)
+    try {
+      const resposta = await api.post(`/usuarios/logar`, userLogin)
+      setToken(resposta.data.token)
 
-          alert('Usuario logado com sucesso!')
-    }catch(error){
-        alert('Dados do usuário insoncistentes. Erro ao logar!')
+      alert('Usuario logado com sucesso!')
+    } catch (error) {
+      alert('Dados do usuário insoncistentes. Erro ao logar!')
     }
   }
 
@@ -48,9 +56,9 @@ function Login() {
             <TextField value={userLogin.usuario} id='usuario' label='usuario' name='usuario' margin='normal' fullWidth onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} />
             <TextField value={userLogin.senha} id='senha' label='senha' name='senha' margin='normal' type='password' fullWidth onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} />
             <Box marginTop={2} textAlign='center'>
-                <Button type='submit' variant='contained' color='primary'>
-                  Logar
-                </Button>
+              <Button type='submit' variant='contained' color='primary'>
+                Logar
+              </Button>
             </Box>
           </form>
           <Box display='flex' justifyContent='center' marginTop={2}>
