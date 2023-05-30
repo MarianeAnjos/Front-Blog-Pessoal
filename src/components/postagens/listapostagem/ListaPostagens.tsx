@@ -8,8 +8,8 @@ import { cadastroUsuario } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 
 
-function ListaPostagens() {
-
+function ListaPostagem() {
+   
   const [postagens, setPostagens] = useState<Postagem[]>([])
   const navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
