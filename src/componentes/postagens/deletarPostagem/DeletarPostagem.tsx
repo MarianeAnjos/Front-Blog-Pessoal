@@ -6,6 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
+
+toast,
 function DeletarPostagem() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
