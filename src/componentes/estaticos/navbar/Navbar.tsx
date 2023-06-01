@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/action';
 
-toast.info,
+
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
