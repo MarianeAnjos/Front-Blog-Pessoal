@@ -8,7 +8,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
-footerComponent,
+
 function Footer() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
