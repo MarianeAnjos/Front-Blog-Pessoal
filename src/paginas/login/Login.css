@@ -1,22 +1,6 @@
-*,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.textos1{
-    font-weight: bold !important;
-}
-.text-decorator-none{
-    text-decoration: none;
-}
-
-.imagem{
-    background-image: url('/src/assets/img/Bem-vindo.png');
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+.imagemLogin {
+  background-image: url('https://media.licdn.com/dms/image/D4D22AQFdw0TRjmP_rQ/feedshare-shrink_1280/0/1683548739890?e=1688601600&v=beta&t=zhbgTGWHPVkErxZDcJN1LeP-0Tcgi1ZqSx-2g3vtZDE');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

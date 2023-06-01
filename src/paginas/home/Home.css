@@ -1,18 +1,17 @@
-.caixa{
-    background-color: white;
+.texto {
+  text-align: center;
 }
 
-.titulo{
-    color: #212121 !important;
-    font-weight: bold !important;
+.alinhamento {
+  display: flex;
 }
 
-.botao{
-    border-color: white !important ;
-    background-color: #3F51B5 !important;
-    color: white !important ;
+.outlinedButton {
+  border-color: #fff !important;
+  color: #fff !important;
 }
 
-.postagens{
-    background-color: white;
+.outlinedButton:hover {
+  background-color: #fff !important;
+  color: #385cb1 !important
 }
